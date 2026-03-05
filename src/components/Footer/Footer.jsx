@@ -19,8 +19,9 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gray-900 text-gray-300">
-      <div className="container-custom section-padding">
+    <>
+      <footer className="bg-gray-900 text-gray-300">
+        <div className="container-custom section-padding">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
@@ -129,8 +130,21 @@ const Footer = () => {
             </a>
           </p>
         </div>
-      </div>
-    </footer>
+        </div>
+      </footer>
+
+      <a
+        href="https://wa.me/1234567890"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat on WhatsApp"
+        className="fixed bottom-6 right-6 z-fixed grid h-14 w-14 place-items-center rounded-full bg-[#25D366] text-white shadow-xl transition-all hover:scale-105 hover:bg-[#20ba5a] focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2"
+      >
+        <svg className="h-7 w-7" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+          <path d="M13.601 2.326A7.854 7.854 0 0 0 8.004 0C3.64 0 .088 3.552.087 7.916a7.9 7.9 0 0 0 1.246 4.25L0 16l3.95-1.31a7.94 7.94 0 0 0 4.053 1.106h.003c4.363 0 7.916-3.552 7.917-7.916a7.86 7.86 0 0 0-2.322-5.554zM8.006 14.44h-.003a6.6 6.6 0 0 1-3.366-.92l-.242-.145-2.345.777.765-2.286-.158-.236a6.59 6.59 0 0 1-1.013-3.53c.002-3.638 2.962-6.598 6.6-6.598a6.56 6.56 0 0 1 4.668 1.932A6.56 6.56 0 0 1 14.845 8c-.001 3.638-2.962 6.44-6.84 6.44zm3.615-4.95c-.198-.099-1.17-.578-1.353-.644-.182-.066-.315-.099-.447.099-.132.197-.513.644-.628.776-.116.132-.23.148-.43.05-.197-.1-.833-.307-1.587-.98-.586-.522-.982-1.167-1.098-1.364-.115-.198-.012-.304.087-.402.09-.09.198-.23.297-.346.099-.115.132-.197.198-.33.066-.132.033-.247-.017-.346-.05-.1-.446-1.074-.61-1.47-.16-.387-.323-.335-.446-.341a8.7 8.7 0 0 0-.38-.006c-.132 0-.347.05-.528.247-.182.198-.694.678-.694 1.653 0 .975.71 1.916.81 2.05.098.132 1.398 2.134 3.386 2.992.473.204.843.326 1.131.417.476.151.908.13 1.25.079.381-.057 1.17-.479 1.336-.941.165-.463.165-.859.116-.942-.05-.082-.182-.132-.38-.23z" />
+        </svg>
+      </a>
+    </>
   );
 };
 
