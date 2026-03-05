@@ -1,7 +1,21 @@
 import Services from '../components/Services/Services';
 import { Link } from 'react-router-dom';
+import useSEO from '../hooks/useSEO';
 
 const ServicesPage = () => {
+  useSEO({
+    title: 'Services',
+    description:
+      'Explore our full range of metal fabrication services, including welding, custom design, industrial solutions, and project installation.',
+    path: '/services',
+    keywords: [
+      'fabrication services',
+      'welding solutions',
+      'custom metal design',
+      'industrial metal works',
+    ],
+  });
+
   return (
     <>
       {/* Page Header */}

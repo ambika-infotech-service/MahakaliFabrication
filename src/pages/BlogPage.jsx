@@ -1,10 +1,24 @@
 import { useState } from 'react';
 import BlogCard from '../components/Blog/BlogCard';
 import { blogPosts, categories } from '../data/blogData';
+import useSEO from '../hooks/useSEO';
 
 const BlogPage = () => {
   const [selectedCategory, setSelectedCategory] = useState('All Posts');
   const [searchQuery, setSearchQuery] = useState('');
+
+  useSEO({
+    title: 'Blog and Insights',
+    description:
+      'Read fabrication industry trends, technical guides, safety best practices, and business insights from Mahakali Fabrication experts.',
+    path: '/blog',
+    keywords: [
+      'fabrication blog',
+      'welding tips',
+      'metal industry insights',
+      'fabrication best practices',
+    ],
+  });
 
   const filteredPosts = blogPosts.filter((post) => {
     const matchesCategory = selectedCategory === 'All Posts' || post.category === selectedCategory;

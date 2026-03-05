@@ -1,6 +1,20 @@
 import About from '../components/About/About';
+import useSEO from '../hooks/useSEO';
 
 const AboutPage = () => {
+  useSEO({
+    title: 'About Us',
+    description:
+      'Learn about Mahakali Fabrication, our mission, vision, and commitment to quality-driven metal fabrication and industrial solutions.',
+    path: '/about',
+    keywords: [
+      'about Mahakali Fabrication',
+      'fabrication company',
+      'metal fabrication experts',
+      'industrial craftsmanship',
+    ],
+  });
+
   return (
     <>
       {/* Page Header */}

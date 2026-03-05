@@ -1,10 +1,54 @@
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { blogPosts } from '../data/blogData';
+import useSEO from '../hooks/useSEO';
+import { buildAbsoluteUrl } from '../utils/seo';
 
 const BlogPost = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const post = blogPosts.find((p) => p.id === parseInt(id));
+
+  useSEO({
+    title: post ? post.title : 'Post Not Found',
+    description: post
+      ? post.excerpt
+      : "The requested blog post could not be found.",
+    path: post ? `/blog/${post.id}` : '/blog',
+    image: post?.image,
+    type: post ? 'article' : 'website',
+    noIndex: !post,
+    keywords: post
+      ? [
+          post.category,
+          'metal fabrication blog',
+          'fabrication insights',
+          post.author,
+        ]
+      : ['blog', 'metal fabrication'],
+    schema: post
+      ? {
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          headline: post.title,
+          description: post.excerpt,
+          image: [post.image],
+          datePublished: post.date,
+          author: {
+            '@type': 'Person',
+            name: post.author,
+          },
+          publisher: {
+            '@type': 'Organization',
+            name: 'Mahakali Fabrication',
+            logo: {
+              '@type': 'ImageObject',
+              url: buildAbsoluteUrl('/vite.svg'),
+            },
+          },
+          mainEntityOfPage: buildAbsoluteUrl(`/blog/${post.id}`),
+        }
+      : null,
+  });
 
   if (!post) {
     return (

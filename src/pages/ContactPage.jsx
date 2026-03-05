@@ -1,6 +1,20 @@
 import Contact from '../components/Contact/Contact';
+import useSEO from '../hooks/useSEO';
 
 const ContactPage = () => {
+  useSEO({
+    title: 'Contact Us',
+    description:
+      'Contact Mahakali Fabrication to discuss your project requirements, request a quote, and get expert support for fabrication solutions.',
+    path: '/contact',
+    keywords: [
+      'contact fabrication company',
+      'request fabrication quote',
+      'metal fabrication consultation',
+      'Mahakali Fabrication contact',
+    ],
+  });
+
   return (
     <>
       {/* Page Header */}

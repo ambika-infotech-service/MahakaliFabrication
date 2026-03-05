@@ -3,8 +3,35 @@ import Services from '../components/Services/Services';
 import About from '../components/About/About';
 import Contact from '../components/Contact/Contact';
 import { Link } from 'react-router-dom';
+import useSEO from '../hooks/useSEO';
+import { buildOrganizationSchema } from '../utils/seo';
 
 const Home = () => {
+  useSEO({
+    title: 'Home',
+    description:
+      'Mahakali Fabrication delivers precision metal fabrication, welding, and industrial solutions for commercial and industrial projects.',
+    path: '/',
+    keywords: [
+      'metal fabrication',
+      'industrial fabrication',
+      'welding services',
+      'custom fabrication',
+      'Mahakali Fabrication',
+    ],
+    schema: {
+      '@context': 'https://schema.org',
+      '@graph': [
+        buildOrganizationSchema(),
+        {
+          '@type': 'WebSite',
+          name: 'Mahakali Fabrication',
+          url: 'https://mahakalifabrication.com/',
+        },
+      ],
+    },
+  });
+
   return (
     <>
       <Hero />
