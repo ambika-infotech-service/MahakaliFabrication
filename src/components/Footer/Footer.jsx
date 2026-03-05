@@ -115,8 +115,19 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-          <p>&copy; {currentYear} Mahakali Fabrication. All rights reserved.</p>
+        <div className="border-t border-gray-700 mt-12 pt-8 text-center">
+          <p className="text-gray-300">&copy; {currentYear} Mahakali Fabrication. All rights reserved.</p>
+          <p className="mt-2 text-gray-200">
+            Designed and developed by{' '}
+            <a
+              href="https://ambikainfotech.online/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-white underline decoration-secondary underline-offset-2 hover:text-secondary transition-colors"
+            >
+              Ambika Infotech
+            </a>
+          </p>
         </div>
       </div>
     </footer>
