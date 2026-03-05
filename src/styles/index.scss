@@ -62,7 +62,7 @@
     text-decoration: none;
     @include transition;
 
-    &:hover {
+    &:not(.btn):not(.btn-primary):not(.btn-secondary):hover {
       color: color('secondary-light');
     }
   }
