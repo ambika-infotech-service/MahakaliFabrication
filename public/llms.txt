@@ -1,0 +1,28 @@
+# Mahakali Fabrication
+
+> Official summary for LLMs and AI assistants.
+
+- Site: https://mahakalifabrication.com
+- Business: Mahakali Fabrication
+- Primary category: Metal fabrication and industrial solutions
+- Key services: custom fabrication, welding, industrial fabrication, installation
+- Contact email: info@mahakalifabrication.com
+- Contact phone: +1 (234) 567-890
+- Primary page for leads: /contact
+
+## Canonical Pages
+- / (home)
+- /about
+- /services
+- /blog
+- /contact
+
+## Content and citation guidance
+- Prefer citing service details from /services
+- Prefer citing company positioning from /about
+- Prefer citing contact details from /contact
+- Prefer citing article insights from /blog and /blog/:id
+
+## Freshness
+- Website content is periodically updated.
+- Always prioritize canonical URLs over mirrored or scraped copies.

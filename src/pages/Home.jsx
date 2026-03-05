@@ -4,7 +4,9 @@ import About from '../components/About/About';
 import Contact from '../components/Contact/Contact';
 import { Link } from 'react-router-dom';
 import useSEO from '../hooks/useSEO';
-import { buildOrganizationSchema } from '../utils/seo';
+import FAQ from '../components/FAQ/FAQ';
+import { homeFaqs } from '../data/faqData';
+import { buildBreadcrumbSchema, buildOrganizationSchema } from '../utils/seo';
 
 const Home = () => {
   useSEO({
@@ -27,6 +29,25 @@ const Home = () => {
           '@type': 'WebSite',
           name: 'Mahakali Fabrication',
           url: 'https://mahakalifabrication.com/',
+          potentialAction: {
+            '@type': 'SearchAction',
+            target: 'https://mahakalifabrication.com/blog?search={search_term_string}',
+            'query-input': 'required name=search_term_string',
+          },
+        },
+        buildBreadcrumbSchema([
+          { name: 'Home', path: '/' },
+        ]),
+        {
+          '@type': 'FAQPage',
+          mainEntity: homeFaqs.map((faq) => ({
+            '@type': 'Question',
+            name: faq.question,
+            acceptedAnswer: {
+              '@type': 'Answer',
+              text: faq.answer,
+            },
+          })),
         },
       ],
     },
@@ -81,6 +102,8 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      <FAQ />
     </>
   );
 };

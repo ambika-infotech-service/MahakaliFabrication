@@ -1,5 +1,6 @@
 import Contact from '../components/Contact/Contact';
 import useSEO from '../hooks/useSEO';
+import { buildBreadcrumbSchema, buildLocalBusinessSchema } from '../utils/seo';
 
 const ContactPage = () => {
   useSEO({
@@ -13,6 +14,16 @@ const ContactPage = () => {
       'metal fabrication consultation',
       'Mahakali Fabrication contact',
     ],
+    schema: {
+      '@context': 'https://schema.org',
+      '@graph': [
+        buildBreadcrumbSchema([
+          { name: 'Home', path: '/' },
+          { name: 'Contact', path: '/contact' },
+        ]),
+        buildLocalBusinessSchema(),
+      ],
+    },
   });
 
   return (

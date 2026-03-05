@@ -1,5 +1,6 @@
 import About from '../components/About/About';
 import useSEO from '../hooks/useSEO';
+import { buildBreadcrumbSchema } from '../utils/seo';
 
 const AboutPage = () => {
   useSEO({
@@ -13,6 +14,10 @@ const AboutPage = () => {
       'metal fabrication experts',
       'industrial craftsmanship',
     ],
+    schema: buildBreadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: 'About', path: '/about' },
+    ]),
   });
 
   return (

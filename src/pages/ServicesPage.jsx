@@ -1,6 +1,7 @@
 import Services from '../components/Services/Services';
 import { Link } from 'react-router-dom';
 import useSEO from '../hooks/useSEO';
+import { buildBreadcrumbSchema } from '../utils/seo';
 
 const ServicesPage = () => {
   useSEO({
@@ -14,6 +15,10 @@ const ServicesPage = () => {
       'custom metal design',
       'industrial metal works',
     ],
+    schema: buildBreadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: 'Services', path: '/services' },
+    ]),
   });
 
   return (

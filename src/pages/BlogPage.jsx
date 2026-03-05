@@ -2,6 +2,7 @@ import { useState } from 'react';
 import BlogCard from '../components/Blog/BlogCard';
 import { blogPosts, categories } from '../data/blogData';
 import useSEO from '../hooks/useSEO';
+import { buildBreadcrumbSchema } from '../utils/seo';
 
 const BlogPage = () => {
   const [selectedCategory, setSelectedCategory] = useState('All Posts');
@@ -18,6 +19,10 @@ const BlogPage = () => {
       'metal industry insights',
       'fabrication best practices',
     ],
+    schema: buildBreadcrumbSchema([
+      { name: 'Home', path: '/' },
+      { name: 'Blog', path: '/blog' },
+    ]),
   });
 
   const filteredPosts = blogPosts.filter((post) => {

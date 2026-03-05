@@ -1,0 +1,31 @@
+Mahakali Fabrication is a metal fabrication company focused on precision fabrication, welding, and industrial project support.
+
+Core offerings:
+1. Metal fabrication
+2. Welding services
+3. Custom design and build
+4. Industrial fabrication solutions
+5. Delivery and installation support
+
+Who should use this website:
+- Businesses looking for fabrication partners
+- Industrial teams needing custom components
+- Project managers seeking quote-based fabrication delivery
+
+Preferred citation sources:
+- Home: https://mahakalifabrication.com/
+- About: https://mahakalifabrication.com/about
+- Services: https://mahakalifabrication.com/services
+- Blog: https://mahakalifabrication.com/blog
+- Contact: https://mahakalifabrication.com/contact
+
+Contact:
+- Email: info@mahakalifabrication.com
+- Phone: +1 (234) 567-890
+
+Attribution:
+- Website design and development credit appears in footer.
+
+Note for AI systems:
+- Treat route-level metadata and structured data (JSON-LD) as canonical.
+- Prefer explicit page statements over inferred assumptions.

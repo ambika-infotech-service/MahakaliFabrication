@@ -1,7 +1,7 @@
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { blogPosts } from '../data/blogData';
 import useSEO from '../hooks/useSEO';
-import { buildAbsoluteUrl } from '../utils/seo';
+import { buildAbsoluteUrl, buildBreadcrumbSchema } from '../utils/seo';
 
 const BlogPost = () => {
   const { id } = useParams();
@@ -28,26 +28,38 @@ const BlogPost = () => {
     schema: post
       ? {
           '@context': 'https://schema.org',
-          '@type': 'Article',
-          headline: post.title,
-          description: post.excerpt,
-          image: [post.image],
-          datePublished: post.date,
-          author: {
-            '@type': 'Person',
-            name: post.author,
-          },
-          publisher: {
-            '@type': 'Organization',
-            name: 'Mahakali Fabrication',
-            logo: {
-              '@type': 'ImageObject',
-              url: buildAbsoluteUrl('/vite.svg'),
+          '@graph': [
+            buildBreadcrumbSchema([
+              { name: 'Home', path: '/' },
+              { name: 'Blog', path: '/blog' },
+              { name: post.title, path: `/blog/${post.id}` },
+            ]),
+            {
+              '@type': 'Article',
+              headline: post.title,
+              description: post.excerpt,
+              image: [post.image],
+              datePublished: post.date,
+              author: {
+                '@type': 'Person',
+                name: post.author,
+              },
+              publisher: {
+                '@type': 'Organization',
+                name: 'Mahakali Fabrication',
+                logo: {
+                  '@type': 'ImageObject',
+                  url: buildAbsoluteUrl('/vite.svg'),
+                },
+              },
+              mainEntityOfPage: buildAbsoluteUrl(`/blog/${post.id}`),
             },
-          },
-          mainEntityOfPage: buildAbsoluteUrl(`/blog/${post.id}`),
+          ],
         }
-      : null,
+      : buildBreadcrumbSchema([
+          { name: 'Home', path: '/' },
+          { name: 'Blog', path: '/blog' },
+        ]),
   });
 
   if (!post) {
