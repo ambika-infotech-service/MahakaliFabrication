@@ -7,7 +7,7 @@ import App from './App.jsx'
 const basename =
   window.location.hostname === "ambika-infotech-service.github.io"
     ? "/MahakaliFabrication"
-    : "/";
+    : "";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
